@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "9c54b9bd-637d-4092-b531-e435bac48a83",
+		"name": "Cardo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mekus600@yahoo.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{app_url}}api/register",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mekus600@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{app_url}}api/login",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/user",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/logout",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "card_number",
+							"value": "5433289932334542",
+							"description": "A valid representation of a card number (must be 16 digits)",
+							"type": "default"
+						},
+						{
+							"key": "expiration",
+							"value": "12-02-2023",
+							"description": "A valid date",
+							"type": "default"
+						},
+						{
+							"key": "cvv",
+							"value": "433",
+							"description": "An integer value and must be 3 digits",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{app_url}}api/dashboard/create-card",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"create-card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Merchants",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/get-merchants",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"get-merchants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card Switcher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "card_id",
+							"value": "10",
+							"description": "Card ID must exists in the database",
+							"type": "default"
+						},
+						{
+							"key": "merchant_id",
+							"value": "19",
+							"description": "Merchant ID must exists in the database",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{app_url}}api/dashboard/create-task",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"create-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_id",
+							"value": "12",
+							"description": "A valid task ID that must have been gotten from the database.",
+							"type": "default"
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"description": "A value between 0 and 1; 1 means the task was marked as completed; 0 means otherswise - that the task has failed.",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{app_url}}api/dashboard/mark-task",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"mark-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latest Finished Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/latest-finished-tasks",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"latest-finished-tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "default",
+			"disabled": true
+		}
+	]
+}
