@@ -16,6 +16,6 @@ class Task extends Model
 
     public function card()
     {
-        return $this->belongsTo(Merchant::class, 'card_id');
+        return $this->belongsTo(Card::class, 'card_id');
     }
 }

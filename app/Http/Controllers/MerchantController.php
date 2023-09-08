@@ -13,7 +13,7 @@ class MerchantController extends Controller
 
     public function latestFinishedTask()
     {
-        return Merchant::with(['latestTask' => function ($query) {
+        return Merchant::with(['latestTask.card', 'latestTask' => function ($query) {
             $query->where('status', 1);
         }])->get();
     }
