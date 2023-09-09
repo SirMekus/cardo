@@ -19,6 +19,6 @@ class LoginResponse extends Controller implements LoginResponseContract
      */
     public function toResponse($request)
     {
-		return response(200);
+      return response(200);
     }
 }

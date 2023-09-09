@@ -15,7 +15,6 @@ class AuthController extends Controller
               'success' => true,
               'token' => request()->user()->createToken(config('settings.token_name'))->plainTextToken,
             ]);
-
         } 
         else 
         {
@@ -61,4 +60,3 @@ class AuthController extends Controller
     }
 
 }
-
