@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->post('register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::middleware(['signed-in'])->group(function () {
 
-Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+    Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
+
+    Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+});
 
 Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
