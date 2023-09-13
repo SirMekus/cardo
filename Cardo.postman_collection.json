@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9c54b9bd-637d-4092-b531-e435bac48a83",
+		"_postman_id": "efd0df34-81b5-4291-b005-af998ba18f85",
 		"name": "Cardo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -99,16 +99,6 @@
 		{
 			"name": "User",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [
 					{
@@ -138,16 +128,6 @@
 		{
 			"name": "Logout",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [
 					{
@@ -177,16 +157,6 @@
 		{
 			"name": "Create Card",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -220,6 +190,12 @@
 							"value": "433",
 							"description": "An integer value and must be 3 digits",
 							"type": "default"
+						},
+						{
+							"key": "user_id",
+							"value": "2",
+							"description": "A user's id from the database",
+							"type": "default"
 						}
 					]
 				},
@@ -239,16 +215,6 @@
 		{
 			"name": "Get Merchants",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -265,18 +231,8 @@
 			"response": []
 		},
 		{
-			"name": "Card Switcher",
+			"name": "Create Task",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -295,7 +251,7 @@
 					"formdata": [
 						{
 							"key": "card_id",
-							"value": "10",
+							"value": "7",
 							"description": "Card ID must exists in the database",
 							"type": "default"
 						},
@@ -323,16 +279,6 @@
 		{
 			"name": "Mark Task",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -379,16 +325,6 @@
 		{
 			"name": "Latest Finished Tasks",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [
 					{
@@ -414,8 +350,105 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/users",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/ecmascript",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/get-tasks",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"get-tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cards",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/ecmascript",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{app_url}}api/dashboard/get-cards",
+					"host": [
+						"{{app_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"get-cards"
+					]
+				}
+			},
+			"response": []
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",

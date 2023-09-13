@@ -28,6 +28,8 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     Route::get('logout', [App\Http\Controllers\AuthController::class, 'logout']);
 
+    Route::get('get-cards', [App\Http\Controllers\CardController::class, 'getCards']);
+
     Route::post('create-card', [App\Http\Controllers\CardController::class, 'createCard']);
 
     Route::get('get-merchants', [App\Http\Controllers\MerchantController::class, 'getMerchants']);
@@ -36,6 +38,10 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     Route::post('mark-task', [App\Http\Controllers\TaskController::class, 'marktask']);
 
+    Route::get('get-tasks', [App\Http\Controllers\TaskController::class, 'getTasks']);
+
     Route::get('latest-finished-tasks', [App\Http\Controllers\MerchantController::class, 'latestFinishedTask']);
+
+    Route::get('users', [App\Http\Controllers\UserController::class, 'getUsers']);
 
 });

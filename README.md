@@ -4,12 +4,11 @@ On your local machine:
 
 1. Unzip the file
 1. Run composer install
-1. Create and fill the .env file (example included /.env-example)
+1. Create and fill the .env file (example included in .env-example)
 1. Run `php artisan migrate` to create database tables
 1. Seed the database by running `php artisan db:seed --class=MerchantSeeder`.
-1. Seed the database by running `php artisan db:seed --class=CardSeeder` (optional).
-1. Seed the database by running `php artisan db:seed --class=TaskSeeder` (optional).
 1. Seed the database by running `php artisan db:seed --class=UserSeeder` (optional).
+1. Seed the database by running `php artisan db:seed --class=CardSeeder` (optional).
 
 > NB: If you wish to set up your own API client side, the base url should be http://localhost or whatever it is that is your local server's address. All requests must then be passed via the `"api/"` path. This has already been taken care of if you use the Postman Collection included in the project. Simply import the Postman Collection into your own Postman software and explore the routes present there.
 > Please note that you can actually edit the `'app_url'` variable in the Postman Environment (present in this project) to reflect your local environment's server/host or our live server which can be found in the `".env"` file.
