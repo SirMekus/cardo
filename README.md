@@ -2,9 +2,9 @@
 
 On your local machine:
 
-1. Unzip the file
 1. Run composer install
 1. Create and fill the .env file (example included in .env-example)
+1. Run `php artisan key:generate` to create application key (after you must have created the .env file).
 1. Run `php artisan migrate` to create database tables
 1. Seed the database by running `php artisan db:seed --class=MerchantSeeder`.
 1. Seed the database by running `php artisan db:seed --class=UserSeeder` (optional).
@@ -19,4 +19,4 @@ You must first register and/or login before you can explore the API using the en
 
 This token expires on logout and a new one will be created when you login again. The 'updated' token should then be used for subequent requests. If you use the Postman Collection included in this project, in the Environment, set the `token` variable to the value of the token sent from the server and that is all. The endpoints are present in the Postman collection and can be found in the `"api.php"` file in the `"routes"` folder.
 
-> Note that you should log in with the credentials you used in registeration.
+> Note that you should log in with the credentials you used in registeration. Production URL/live server is `"https://i-runs.com/cardo/"`.
